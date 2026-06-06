@@ -88,10 +88,10 @@ final class Latte3Compiler extends AbstractCompiler
         $this->engine->applyPasses($templateNode);
         $className = $this->generateClassName();
         $templateGenerator = new TemplateGenerator();
-        $phpContent = $templateGenerator->generate(
-            $templateNode,
+        $templateGenerator->buildClass($templateNode);
+        $phpContent = $templateGenerator->generateCode(
             $className,
-            $this->generateClassComment($className, $context),
+            $context !== '' ? $context : null,
             $this->strictMode
         );
         $phpContent = $this->fixLines($phpContent);
