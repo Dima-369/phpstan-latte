@@ -7,6 +7,8 @@ This is a fork of [efabrica/phpstan-latte](https://github.com/efabrica-team/phps
 - **Latte 3.1 compatibility**: Updated `Latte3Compiler` to use the new `TemplateGenerator` API. Latte 3.1 renamed `TemplateGenerator::generate()` to `TemplateGenerator::generateCode()` and split the compilation into two steps: `buildClass()` (populates the class structure from the template AST) and `generateCode()` (produces the final PHP string). The old single-step `generate()` method was removed in Latte 3.1.
 - **Relaxed version constraint**: `latte/latte` requirement changed from `^2.11.6 | ~3.0.25` to `^3.1`.
 
+# Original README
+
 PHPStan extension to check compiled Latte templates in context of a Presenter or a Component etc. Templates are compiled to PHP code which is then analyzed with PHPStan rules according to a configured [rule level](https://phpstan.org/user-guide/rule-levels) and rules from loaded extensions.
 
 The extension is based on Tomas Votruba's [blog series](https://tomasvotruba.com/blog/stamp-static-analysis-of-templates/) and his packages symplify and reveal.
