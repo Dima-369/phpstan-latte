@@ -7,7 +7,7 @@ This is a fork of [efabrica/phpstan-latte](https://github.com/efabrica-team/phps
 - **Latte 3.1 compatibility**: Updated `Latte3Compiler` to use the new `TemplateGenerator` API. Latte 3.1 renamed `TemplateGenerator::generate()` to `TemplateGenerator::generateCode()` and split the compilation into two steps: `buildClass()` (populates the class structure from the template AST) and `generateCode()` (produces the final PHP string). The old single-step `generate()` method was removed in Latte 3.1.
 - **Relaxed version constraint**: `latte/latte` requirement changed from `^2.11.6 | ~3.0.25` to `^3.1`.
 - **Line number mapping fix**: Latte 3.1 changed position comment format from `/* line N */` to `/* pos N:M */`. Updated `LineMapper` to recognize both formats. Additionally, the PHP-Compiler pretty printer strips position comments during post-processing, causing all errors to show line 1. Fixed by reading from the `.original` file (saved by `LatteToPhpCompiler`) and remapping line numbers to match the post-processed output via code normalization.
-- **Function signature update**: Latte 3.1 passes `$this` (the template instance) as the first argument to template functions. Updated `css` function signature accordingly.
+
 
 # Original README
 
